@@ -249,6 +249,47 @@
             font-weight: 500;
         }
 
+        /* Featured badge */
+        .featured-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 14px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+        }
+        .project-card.highlight {
+            border: 2px solid #667eea;
+            position: relative;
+        }
+        .project-card.highlight::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px 15px 0 0;
+        }
+        .stats-row {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 1.2rem;
+            flex-wrap: wrap;
+        }
+        .stat-pill {
+            background: #f0f4ff;
+            color: #667eea;
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid #c7d2fe;
+        }
+
         /* Projects Section */
         .projects {
             padding: 80px 0;
@@ -567,9 +608,30 @@
                     <div class="skill-tags">
                         <span class="skill-tag">Python</span>
                         <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">Power Bi</span>
+                        <span class="skill-tag">Power BI</span>
                         <span class="skill-tag">Excel</span>
                         <span class="skill-tag">Statistics</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3><i class="fas fa-database"></i> Database & ETL</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">SQLAlchemy</span>
+                        <span class="skill-tag">pandas</span>
+                        <span class="skill-tag">ETL Pipelines</span>
+                        <span class="skill-tag">Data Normalization</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3><i class="fas fa-chart-bar"></i> Data Visualization</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">DAX</span>
+                        <span class="skill-tag">Pivot Tables</span>
+                        <span class="skill-tag">Dashboard Design</span>
                     </div>
                 </div>
                
@@ -581,6 +643,42 @@
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
             <div class="projects-grid">
+
+                <!-- ★ NEW PROJECT ★ -->
+                <div class="project-card highlight fade-in">
+                    <div class="project-image" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); flex-direction: column; gap: 10px;">
+                        <div style="display:flex; gap:18px; align-items:center;">
+                            <span style="font-size:2.8rem;">🐍</span>
+                            <span style="font-size:1.4rem; opacity:0.6;">→</span>
+                            <span style="font-size:2.8rem;">🗄️</span>
+                        </div>
+                        <div style="font-size:0.85rem; opacity:0.75; letter-spacing:1px; text-transform:uppercase;">Python · SQLAlchemy · MySQL</div>
+                    </div>
+                    <div class="project-content">
+                        <span class="featured-badge">⭐ Latest Project</span>
+                        <h3>Amazon Sales ETL Pipeline</h3>
+                        <div class="stats-row">
+                            <span class="stat-pill">21,232 rows loaded</span>
+                            <span class="stat-pill">5 normalized tables</span>
+                            <span class="stat-pill">9,269 reviews</span>
+                        </div>
+                        <p>Built an automated end-to-end ETL pipeline that reads a raw Amazon Sales CSV, cleans messy real-world data (₹ symbols, pipe-separated fields, NaN values), normalizes it into a 5-table relational schema (categories, products, pricing, users, reviews), and loads it into MySQL using SQLAlchemy ORM — all triggered by a single Python command.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">SQLAlchemy</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">pandas</span>
+                            <span class="tech-tag">ETL</span>
+                            <span class="tech-tag">DB Normalization</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/nimbalkarmadhuri/amazon-sales-etl" class="project-link" target="_blank">
+                                <i class="fab fa-github"></i> GitHub Repo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="project-card fade-in">
                     <div class="project-image">
                         <img src="Blinkit.jpg" alt="Description of image" width="250" height="180">
@@ -701,7 +799,7 @@ preprocessing and KPI computation. Built interactive Power BI dashboards with DA
                     
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <span>nimbalkarmadhuri3@gmail.com</span>
+                        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a1cfc8ccc3c0cdcac0d3ccc0c5c9d4d3c892e1c6ccc0c8cd8fc2cecc">[email&#160;protected]</a></span>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
@@ -740,11 +838,11 @@ preprocessing and KPI computation. Built interactive Power BI dashboards with DA
     <footer>
         <div class="container">
             
-            <p>&copy; 2025 Madhuri Nimbalkar. All rights reserved.</p>
+            <p>&copy; 2026 Madhuri Nimbalkar. All rights reserved.</p>
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Mobile menu toggle
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
@@ -830,10 +928,4 @@ preprocessing and KPI computation. Built interactive Power BI dashboards with DA
                 }
             }
             
-            type();
-        }
-
-        // Add some interactivity to skill tags
-        document.querySelectorAll('.skill-tag').forEach(tag => {
-            tag.addEventListener('mouseenter', function() {
-                this.style.transform
+        
